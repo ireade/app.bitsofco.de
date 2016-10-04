@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>bitsofcode</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A Progressive Web Application for bitsofcode, weekly articles about front-end development. Written by User Interface Designer and Front-End Developer, Ire Aderinokun">
+
+    <!-- Link to Web App Manifest for Chrome -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#f5f5f5">
+
+    <!-- Favicons and Touch Icons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/icon16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/icon32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="./img/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="./img/icon128.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="./img/icon256.png">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-title" content="bitsofcode">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/icon152.png">
+
+    <!-- Tile Icon for Windows-->
+    <meta name="msapplication-TileColor" content="#feda4c">
+    <meta name="msapplication-TileImage" content="./img/icon144.png">
+
+    <!-- Other metadata -->
+    <meta property="og:title" content="bitsofcode">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./img/icon128.png">
+    <meta property="og:site_name" content="bitsofcode">
+    <meta property="og:url" content="https://app.bitsofco.de">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="wrapper">
+        <h1 class="site-title">
+            bitsofcode
+        </h1>
+    </div>
+</header>
+
+<main class="site-main site-main--latest">
+    <article id="article" class="article"></article>
+</main>
+
+<footer class="site-footer">
+    <nav class="site-nav">
+        <ul>
+            <li>
+                <a href="latest.html">
+                    <i class="fa fa-plus"></i>
+                    <span>Latest</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="saved.html">
+                    <i class="fa fa-bookmark"></i>
+                    <span>Bookmarks</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</footer>
+
+<!-- build:js -->
+<script src="./js/bundle.js"></script>
+<!-- endbuild -->
+<script src="./js/article.js"></script>
+</body>
+</html>

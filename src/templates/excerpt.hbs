@@ -1,0 +1,41 @@
+{{#each items}}
+<article class="excerpt">
+    <header class="excerpt__header">
+        <h3 class="excerpt__title">
+            {{title}}
+        </h3>
+        <i class="fa fa-clock-o"></i>
+        <date class="excerpt__meta">{{moment pubDate}}</date>
+        <i class="fa fa-tags"></i>
+        <span class="excerpt__meta">
+            {{#each categories}} <span class="excerpt__meta__category">{{this}}</span> {{/each}}
+        </span>
+    </header>
+
+    <div class="excerpt__content">
+        {{{excerpt description}}}
+    </div>
+    <div class="excerpt__footer">
+        <button class="btn btn-default"
+                data-guid="{{guid}}"
+                onclick="goToArticle(this)">
+            <i class="fa fa-ellipsis-h"></i>
+            <span>Read</span>
+        </button>
+
+        <button class="btn btn-default btn-bookmark {{#if isBookmarked}}btn-bookmark--bookmarked{{/if}}"
+                data-guid="{{guid}}"
+                onclick="toggleBookmark(this)">
+            <span class="isBookmarked">
+                <i class="fa fa-check-circle"></i>
+                <span>Bookmarked</span>
+            </span>
+            <span class="isNotBookmarked">
+                <i class="fa fa-bookmark"></i>
+                <span>Bookmark</span>
+            </span>
+        </button>
+
+    </div>
+</article>
+{{/each}}

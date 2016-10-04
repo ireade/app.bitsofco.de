@@ -1,0 +1,31 @@
+/* ************************
+
+	Variable & Mixins
+
+************************** */
+
+
+$theme: #feda4c;
+$bg-clr: rgb(245,245,245);
+
+$text-clr: rgb(30,30,30);
+
+$grey: #E6E6E6;
+
+$dark-grey: #D7D7D7;
+
+
+
+$drop-shadow-clr: rgba(167,156,142,0.52);
+$box-shadow: 0px 2px 4px 0px #67AEE8;
+
+
+@import 'https://fonts.googleapis.com/css?family=Inconsolata|Lora:400,400i,700|Source+Sans+Pro:400,700';
+
+$serif: 'Lora', serif;
+$sans-serif: 'Source Sans Pro', sans-serif;
+$monospace: 'Inconsolata', monospace;
+
+
+
+$fabPosition: 30px;

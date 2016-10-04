@@ -1,0 +1,40 @@
+<div class="wrapper">
+    <header class="article__header">
+        <h2 class="article__title">{{title}}</h2>
+
+        <i class="fa fa-clock-o"></i>
+        <date class="article__meta">{{moment pubDate}}</date>
+        <br>
+        <i class="fa fa-tags"></i>
+        <span class="article__meta">
+            {{#each categories}} <span class="article__meta__category">{{this}}</span> {{/each}}
+        </span>
+    </header>
+    <div class="article__content">
+        {{{content}}}
+    </div>
+    <footer class="article__footer">
+
+        <a href="https://twitter.com/intent/tweet/?text='{{title}}'%20from%20bitsofco.de&url={{link}}&via=IreAderinokun"
+           class="btn btn-large btn-share-twitter"
+           target="_blank">
+            <i class="fa fa-twitter"></i>
+            <span>Share on Twitter</span>
+        </a>
+
+        <button class="btn btn-white btn-large btn-bookmark {{#if isBookmarked}}btn-bookmark--bookmarked{{/if}}"
+                data-guid="{{guid}}"
+                onclick="toggleBookmark(this)">
+            <span class="isBookmarked">
+                <i class="fa fa-check-circle"></i>
+                <span>Bookmarked</span>
+            </span>
+            <span class="isNotBookmarked">
+                <i class="fa fa-bookmark"></i>
+                <span>Bookmark Article</span>
+            </span>
+        </button>
+
+    </footer>
+</div>
+

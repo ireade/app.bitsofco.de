@@ -1,0 +1,134 @@
+.btn {
+  border: 1px solid #D7D7D7;
+  //box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.04);
+  border-radius: 5px;
+  padding: 7px 5px;
+  text-align: center;
+  font-family: $sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 48%;
+  
+  .fa {
+    padding-right: 5px;
+  }
+
+  transition: background 0.5s;
+
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+.btn-white {
+  background: #fff;
+}
+.btn-white:hover,
+.btn-white:focus {
+  outline: none;
+  background: $theme;
+}
+
+
+.btn-default {
+  background: $bg-clr;
+}
+.btn-default:hover,
+.btn-default:focus {
+  outline: none;
+  background: $theme;
+}
+
+.btn-theme {
+  background: $theme;
+}
+.btn-theme:hover,
+.btn-theme:focus {
+  outline: none;
+  background: $bg-clr;
+}
+
+.btn-share-twitter {
+  background: #00aced;
+  color: $bg-clr;
+}
+.btn-share-twitter:hover,
+.btn-share-twitter:focus {
+  outline: none;
+  background: $theme;
+  color: #000;
+}
+
+.btn-large {
+  width: 100%;
+  display: block;
+  padding: 10px 5px;
+  margin-bottom: 15px;
+}
+
+
+
+/* Bookmark Button */
+
+.btn-bookmark {
+  .isBookmarked {
+    display: none;
+  }
+}
+
+.btn-bookmark--bookmarked {
+  .isBookmarked {
+    display: block;
+  }
+  .isNotBookmarked {
+    display: none;
+  }
+}
+
+
+/* Notifications Buttons */
+
+.btn-notifications {
+  .notificationsOn {
+    display: none;
+  }
+}
+
+.btn-notifications--on {
+  .notificationsOff {
+    display: none;
+  }
+  .notificationsOn {
+    display: block;
+  }
+}
+
+
+/* Link Buttons */
+
+button.a {
+  border: 0;
+  background: 0;
+  text-decoration: underline;
+  padding: 0 2px;
+  margin: 0;
+  cursor: pointer;
+  font-family: $sans-serif;
+}
+
+
+/* States */
+
+.btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.btn[disabled]:hover,
+.btn[disabled]:focus {
+  background-color: $bg-clr;
+}
+
