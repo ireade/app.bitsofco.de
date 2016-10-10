@@ -1,7 +1,6 @@
 function NotificationsService(serviceWorkerReg) {
     this.serviceWorkerReg = serviceWorkerReg;
     this.url = 'https://bitsofcode-notify.herokuapp.com/users/';
-
     this.headers = new Headers();
     this.headers.append('Content-Type', 'application/json');
 }
@@ -28,9 +27,7 @@ NotificationsService.prototype.unsubscribe = function() {
 NotificationsService.prototype._addSubscription = function(sub) {
     return new Promise((resolve, reject) => {
         const uid = sub.endpoint.split('gcm/send/')[1];
-        const body = JSON.stringify({
-            uid: uid
-        });
+        const body = JSON.stringify({ uid: uid });
         const init = {
             method: 'POST',
             headers: this.headers,

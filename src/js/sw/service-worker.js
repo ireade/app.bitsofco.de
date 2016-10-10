@@ -1,6 +1,10 @@
 // Service Worker Toolbox
 importScripts('js/lib/sw-toolbox/sw-toolbox.js');
 
+// Offline Google Analytics
+importScripts('js/lib/sw-offline-google-analytics.js');
+goog.offlineGoogleAnalytics.initialize();
+
 // Files to precache
 const precacheFiles = [
     './',

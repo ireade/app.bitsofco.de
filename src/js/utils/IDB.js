@@ -20,7 +20,6 @@ IDB.prototype._setupDB = function() {
         const SettingsStore = upgradeDb.createObjectStore('Settings', {
             keyPath: 'setting'
         });
-
         
     });
 };
