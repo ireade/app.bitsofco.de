@@ -2,8 +2,10 @@
 importScripts('js/lib/sw-toolbox/sw-toolbox.js');
 
 // Offline Google Analytics
-// importScripts('js/lib/sw-offline-google-analytics.js');
-// goog.offlineGoogleAnalytics.initialize();
+importScripts('js/lib/sw-offline-google-analytics.js');
+goog.offlineGoogleAnalytics.initialize();
+
+console.log("4040 removed")
 
 // Files to precache
 const precacheFiles = [
@@ -12,7 +14,6 @@ const precacheFiles = [
     './article.html',
     './latest.html',
     './saved.html',
-    './404.html',
 
     './css/main.css',
     'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
