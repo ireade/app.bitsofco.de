@@ -137,10 +137,9 @@ var connect = require('gulp-connect');
 
 gulp.task('connect', function() {
 	connect.server({
-		port: 7230
+		port: 7200
 	});
 });
-
 
 
 
