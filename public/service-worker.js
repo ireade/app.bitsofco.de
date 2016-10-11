@@ -5,14 +5,13 @@ importScripts('js/lib/sw-toolbox/sw-toolbox.js');
 importScripts('js/lib/sw-offline-google-analytics.js');
 goog.offlineGoogleAnalytics.initialize();
 
-console.log("4040 removed")
-
 // Files to precache
 const precacheFiles = [
     './',
     './index.html',
     './article.html',
     './latest.html',
+    './latest.html?notification=true',
     './saved.html',
 
     './css/main.css',
@@ -56,7 +55,7 @@ self.addEventListener('push', (event) => {
 self.addEventListener('notificationclick', function (event) {
     console.log('Notification click: tag', event.notification.tag);
     event.notification.close();
-    const url = './latest.html';
+    const url = './latest.html?notification=true';
     event.waitUntil(
         clients.matchAll({ type: 'window'}).then(function (windowClients) {
             for (let i = 0; i < windowClients.length; i++) {

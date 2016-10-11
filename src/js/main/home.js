@@ -69,6 +69,12 @@ getPublishTimeSetting()
  *************** */
 const notificationsButton = document.querySelector('.btn-notifications');
 
+function showNotificationSettingProcessing(show) {
+    document.querySelector('.notificationsProcessing').style.display = show ? 'flex' : 'none';
+    document.querySelector('.notificationsOn').style.opacity = show ? '0' : '1';
+    document.querySelector('.notificationsOff').style.opacity = show ? '0' : '1';
+}
+
 function getNotificationsSetting() {
     return new Promise((resolve, reject) => {
         Database.search('Settings', false, 'setting', 'allowNotifications')
@@ -78,24 +84,28 @@ function getNotificationsSetting() {
 }
 
 function subscribeToNotifications() {
+    showNotificationSettingProcessing(true);
     const setting = {
         setting: 'allowNotifications',
         value: true
     }
     myNotificationsService.subscribe()
         .then(() => {
+            showNotificationSettingProcessing(false);
             Database.add('Settings', setting);
             notificationsButton.classList.toggle('btn-notifications--on');
         });
 }
 
 function unsubscribeFromNotifications() {
+    showNotificationSettingProcessing(true);
     const setting = {
         setting: 'allowNotifications',
         value: false
     }
     myNotificationsService.unsubscribe()
         .then(() => {
+            showNotificationSettingProcessing(false);
             Database.add('Settings', setting);
             notificationsButton.classList.toggle('btn-notifications--on');
         })
