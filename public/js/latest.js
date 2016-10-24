@@ -22,13 +22,13 @@ function clearDatabase() {
     Database.retrieve('Articles', 'pubDate').then(function (articlesFromDatabase) {
         Articles = sortedArticles(articlesFromDatabase);
         var guidsOfArticlesToDelete = [];
-        for (var i = 10; i < Articles.length; i++) {
+        for (var i = 13; i < Articles.length; i++) {
             guidsOfArticlesToDelete.push(Articles[i].guid);
         }
         return Promise.resolve(guidsOfArticlesToDelete);
     }).then(function (guids) {
-        guids.forEach(function (guid) {
-            return removeArticle;
+        guids.map(function (guid) {
+            return removeArticle(guid);
         });
     });
 }
@@ -44,6 +44,7 @@ function checkForNewArticles() {
     var newArticles = [];
     return new Promise(function (resolve, reject) {
         fetchArticles(true).then(function (articles) {
+            console.log(articles);
             articles.forEach(function (article) {
                 if (isNewArticle(article)) newArticles.push(article);
             });
@@ -56,8 +57,7 @@ function checkForNewArticles() {
 function updateArticlesInBackground() {
     //console.log("updateArticlesInBackground");
     checkForNewArticles().then(function (newArticles) {
-        //console.log(newArticles);
-        if (newArticles.length === 0) return;
+        console.log(newArticles);
         Articles.unshift(newArticles);
         clearDatabase();
     });
