@@ -21,12 +21,12 @@ function clearDatabase() {
         .then((articlesFromDatabase) => {
             Articles = sortedArticles(articlesFromDatabase);
             const guidsOfArticlesToDelete = [];
-            for (let i = 10; i < Articles.length; i++) {
+            for (let i = 13; i < Articles.length; i++) {
                 guidsOfArticlesToDelete.push( Articles[i].guid );
             }
             return Promise.resolve(guidsOfArticlesToDelete)
         })
-        .then((guids) => { guids.forEach(guid => removeArticle) })
+        .then((guids) => { guids.map(guid => removeArticle(guid)) })
 }
 
 /* Getting Articles, Updating in Background, etc */
@@ -41,6 +41,7 @@ function checkForNewArticles() {
     return new Promise((resolve, reject) => {
         fetchArticles(true)
             .then((articles) => {
+                console.log(articles);
                 articles.forEach((article) => { if ( isNewArticle(article) ) newArticles.push(article) });
                 resolve(newArticles);
             })
@@ -51,8 +52,7 @@ function updateArticlesInBackground() {
     //console.log("updateArticlesInBackground");
     checkForNewArticles()
         .then((newArticles) => {
-            //console.log(newArticles);
-            if ( newArticles.length === 0 ) return
+            console.log(newArticles);
             Articles.unshift(newArticles);
             clearDatabase();
         })
