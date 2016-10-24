@@ -1,3 +1,8 @@
+
+.article .wrapper {
+  overflow-x: scroll;
+}
+
 .article__header {
   font-family: $sans-serif;
   font-weight: 600;
@@ -114,6 +119,45 @@ date.article__meta {
   strong {
     font-weight: 600;
   }
+
+
+  // Broken Images Styles
+  img {
+    font-family: $sans-serif;
+    line-height: 2;
+    position: relative;
+
+  }
+
+  img:before {
+    content: " ";
+    display: block;
+
+    position: absolute;
+    top: -5px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    border: 2px dotted rgb(200, 200, 200);
+    border-radius: 5px;
+  }
+
+  img:after {
+    content: "Image Online of '" attr(alt) "'";
+    display: block;
+    font-size: 14px;
+    font-style: normal;
+    font-family: "Source Sans Pro",sans-serif;
+    color: rgb(100, 100, 100);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
 
 
 
