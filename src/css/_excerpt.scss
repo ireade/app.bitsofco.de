@@ -49,8 +49,13 @@ date.excerpt__meta {
   pre,
   h2,
   h3,
-  div {
+  div,
+  .img-subheading {
     display: none;
+  }
+
+  ul, ol {
+    list-style-type: none;
   }
 }
 
